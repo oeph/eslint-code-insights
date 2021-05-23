@@ -1,7 +1,7 @@
 [![npm](https://img.shields.io/npm/v/eslint-code-insights?style=for-the-badge)](https://npmjs.com/package/eslint-code-insights)
 [![npm](https://img.shields.io/npm/dy/eslint-code-insights?style=for-the-badge)](https://npmjs.com/package/eslint-code-insights)
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/oeph/eslint-code-insights?style=for-the-badge)](https://github.com/oeph/eslint-code-insights)
-[![NPM](https://img.shields.io/npm/l/eslint-code-insights?style=for-the-badge)](https://npmjs.com/package/eslint-code-insights)
+[![License](https://img.shields.io/npm/l/eslint-code-insights?style=for-the-badge)](https://github.com/oeph/eslint-code-insights/blob/main/LICENSE)
 
 # Bitbucket Code Insights for ESLint
 
