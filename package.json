@@ -1,0 +1,103 @@
+{
+    "name": "eslint-code-insight",
+    "version": "0.0.1",
+    "description": "Code Insights for ESLint",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "test": "jest",
+        "lint": "eslint . --ext .ts",
+        "lint:fix": "eslint . --ext .ts --fix",
+        "build": "tsc",
+        "clean": "tsc --build --clean",
+        "prebuild": "npm run clean",
+        "prepublish": "npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/oeph/eslint-code-insight.git"
+    },
+    "author": "oeph",
+    "license": "MIT",
+    "keywords": [
+        "eslint",
+        "code insights",
+        "bitbucket",
+        "bitbucket server"
+    ],
+    "bugs": {
+        "url": "https://github.com/oeph/eslint-code-insight/issues"
+    },
+    "homepage": "https://github.com/oeph/eslint-code-insight#readme",
+    "dependencies": {
+        "bbs-code-insights": "^0.0.2"
+    },
+    "peerDependencies": {
+        "eslint": "^7.27.0"
+    },
+    "devDependencies": {
+        "@types/eslint": "^7.2.11",
+        "@types/jest": "^26.0.23",
+        "@typescript-eslint/eslint-plugin": "^4.24.0",
+        "@typescript-eslint/parser": "^4.24.0",
+        "dotenv": "^10.0.0",
+        "eslint": "^7.27.0",
+        "jest": "^26.6.3",
+        "ts-jest": "^26.5.6",
+        "typescript": "^4.2.4"
+    },
+    "eslintConfig": {
+        "parser": "@typescript-eslint/parser",
+        "plugins": [
+            "@typescript-eslint"
+        ],
+        "parserOptions": {
+            "sourceType": "module"
+        },
+        "env": {
+            "es6": true,
+            "jest": true
+        },
+        "extends": [
+            "eslint:recommended",
+            "plugin:@typescript-eslint/eslint-recommended",
+            "plugin:@typescript-eslint/recommended"
+        ],
+        "rules": {
+            "quotes": [
+                "error",
+                "single"
+            ],
+            "semi": [
+                "error",
+                "always"
+            ],
+            "linebreak-style": [
+                "error",
+                "unix"
+            ]
+        }
+    },
+    "jest": {
+        "testEnvironment": "node",
+        "roots": [
+            "<rootDir>/test"
+        ],
+        "testMatch": [
+            "**/__tests__/**/*.+(ts|tsx|js)",
+            "**/?(*.)+(spec|test).+(ts|tsx|js)"
+        ],
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js"
+        ],
+        "transform": {
+            "^.+\\.(ts|tsx)$": "ts-jest"
+        },
+        "setupFiles": [
+            "dotenv/config"
+        ],
+        "clearMocks": true
+    }
+}
