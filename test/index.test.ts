@@ -1,4 +1,5 @@
 import { getCalculateConfigForFile, addESLintInsights } from '../src/index';
+import configSnapshot from './config-snapshot';
 
 const createReportMock = jest.fn(async () => {
     return Promise.resolve();
@@ -23,7 +24,7 @@ const commitId = process.env.COMMIT_ID || 'e69494baf07d6277393051cabece2ba56bad2
 describe('getCalculateConfigForFile', () => {
     test('standard config', async () => {
         const config = await getCalculateConfigForFile('./index.test.ts');
-        expect(config).toMatchSnapshot();
+        expect(config).toMatchObject(configSnapshot);
     });
 });
 
