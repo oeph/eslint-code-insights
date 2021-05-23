@@ -90,10 +90,6 @@ Object {
     "getter-return": Array [
       "off",
     ],
-    "linebreak-style": Array [
-      "error",
-      "unix",
-    ],
     "no-array-constructor": Array [
       "off",
     ],

@@ -81,7 +81,7 @@ async function addESLintInsights(
         warnings += result.warningCount;
         fixableWarnings += result.fixableWarningCount;
 
-        const path = result.filePath.replace(config.repositoryRootPath, '');
+        const path = result.filePath.replace(config.repositoryRootPath, '').replace(/\\/g, '/');
 
         result.messages.forEach(message => {
             annotations.push({

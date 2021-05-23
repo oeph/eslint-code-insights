@@ -115,28 +115,28 @@ describe('addESLintInsights', () => {
 
         expect(annotationArgument).toEqual(
             expect.arrayContaining([{
-                'externalId': '\\test\\file-to-be-linted-w-errors.js-1-7-@typescript-eslint/no-unused-vars',
+                'externalId': '/test/file-to-be-linted-w-errors.js-1-7-@typescript-eslint/no-unused-vars',
                 'line': 1,
                 'message': '\'someVar\' is assigned a value but never used.',
-                'path': '\\test\\file-to-be-linted-w-errors.js',
+                'path': '/test/file-to-be-linted-w-errors.js',
                 'severity': 'HIGH'
             }, {
-                'externalId': '\\test\\file-to-be-linted-w-errors.js-3-10-@typescript-eslint/no-unused-vars',
+                'externalId': '/test/file-to-be-linted-w-errors.js-3-10-@typescript-eslint/no-unused-vars',
                 'line': 3,
                 'message': '\'aFunction\' is defined but never used.',
-                'path': '\\test\\file-to-be-linted-w-errors.js',
+                'path': '/test/file-to-be-linted-w-errors.js',
                 'severity': 'HIGH'
             }, {
-                'externalId': '\\test\\file-to-be-linted-w-errors.js-4-1-no-undef',
+                'externalId': '/test/file-to-be-linted-w-errors.js-4-1-no-undef',
                 'line': 4,
                 'message': '\'console\' is not defined.',
-                'path': '\\test\\file-to-be-linted-w-errors.js',
+                'path': '/test/file-to-be-linted-w-errors.js',
                 'severity': 'HIGH'
             }, {
-                'externalId': '\\test\\file-to-be-linted-w-errors.js-4-20-semi',
+                'externalId': '/test/file-to-be-linted-w-errors.js-4-20-semi',
                 'line': 4,
                 'message': 'Missing semicolon.',
-                'path': '\\test\\file-to-be-linted-w-errors.js',
+                'path': '/test/file-to-be-linted-w-errors.js',
                 'severity': 'MEDIUM'
             }])
         );
