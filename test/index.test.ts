@@ -35,7 +35,7 @@ describe('addESLintInsights', () => {
             project,
             repo,
             commitId,
-            repositoryRootPath: '/',
+            repositoryRootPath: process.cwd(),
         }, 'test/file-to-be-linted.js');
 
         expect(createReportMock).toBeCalledTimes(1);
@@ -48,7 +48,7 @@ describe('addESLintInsights', () => {
             project,
             repo,
             commitId,
-            repositoryRootPath: '/',
+            repositoryRootPath: process.cwd(),
         }, 'test/file-to-be-linted.js');
 
         expect(createReportMock).toBeCalledTimes(1);
@@ -80,7 +80,7 @@ describe('addESLintInsights', () => {
             project,
             repo,
             commitId,
-            repositoryRootPath: '/',
+            repositoryRootPath: process.cwd(),
         }, 'test/file-to-be-linted-w-errors.js');
 
         expect(createReportMock).toBeCalledTimes(1);
@@ -114,43 +114,31 @@ describe('addESLintInsights', () => {
         });
 
         expect(annotationArgument).toEqual(
-            expect.arrayContaining([
-                expect.objectContaining({
-                    'line': 1,
-                    'message': '\'someVar\' is assigned a value but never used.',
-                    'severity': 'HIGH'
-                })
-            ])
-        );
-
-        expect(annotationArgument).toEqual(
-            expect.arrayContaining([
-                expect.objectContaining({
-                    'line': 3,
-                    'message': '\'aFunction\' is defined but never used.',
-                    'severity': 'HIGH'
-                })
-            ])
-        );
-
-        expect(annotationArgument).toEqual(
-            expect.arrayContaining([
-                expect.objectContaining({
-                    'line': 4,
-                    'message': '\'console\' is not defined.',
-                    'severity': 'HIGH'
-                })
-            ])
-        );
-
-        expect(annotationArgument).toEqual(
-            expect.arrayContaining([
-                expect.objectContaining({
-                    'line': 4,
-                    'message': 'Missing semicolon.',
-                    'severity': 'MEDIUM'
-                })
-            ])
+            expect.arrayContaining([{
+                'externalId': '\\test\\file-to-be-linted-w-errors.js-1-7-@typescript-eslint/no-unused-vars',
+                'line': 1,
+                'message': '\'someVar\' is assigned a value but never used.',
+                'path': '\\test\\file-to-be-linted-w-errors.js',
+                'severity': 'HIGH'
+            }, {
+                'externalId': '\\test\\file-to-be-linted-w-errors.js-3-10-@typescript-eslint/no-unused-vars',
+                'line': 3,
+                'message': '\'aFunction\' is defined but never used.',
+                'path': '\\test\\file-to-be-linted-w-errors.js',
+                'severity': 'HIGH'
+            }, {
+                'externalId': '\\test\\file-to-be-linted-w-errors.js-4-1-no-undef',
+                'line': 4,
+                'message': '\'console\' is not defined.',
+                'path': '\\test\\file-to-be-linted-w-errors.js',
+                'severity': 'HIGH'
+            }, {
+                'externalId': '\\test\\file-to-be-linted-w-errors.js-4-20-semi',
+                'line': 4,
+                'message': 'Missing semicolon.',
+                'path': '\\test\\file-to-be-linted-w-errors.js',
+                'severity': 'MEDIUM'
+            }])
         );
     });
 });

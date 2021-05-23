@@ -68,7 +68,6 @@ async function addESLintInsights(
     });
 
     const eslint = new ESLint(eslintOptions);
-    // files = ["lib/**/*.js"]
     const results = await eslint.lintFiles(files);
     let errors = 0;
     let fixableErrors = 0;
